@@ -1,0 +1,293 @@
+/* Estilos inspirados no Netflix */
+
+/* Variáveis CSS para os temas */
+:root {
+  /* Dark Mode (padrão) */
+  --bg-color: #000;
+  --text-color: #fff;
+  --border-color: #fff;
+  --hover-border: #fff;
+  --header-bg: rgba(0, 0, 0, 0.8);
+}
+
+/* Light Mode */
+[data-theme="light"] {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --border-color: #ddd;
+  --hover-border: #e50914;
+  --header-bg: rgba(255, 255, 255, 0.9);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  /* fonte principal Netflix-like */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* centraliza horizontalmente e verticalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* ocupa altura total da viewport */
+  height: 100vh;
+  /* transição suave para mudança de tema */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Header com botão de tema */
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.theme-toggle {
+  background: var(--header-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  border-color: var(--hover-border);
+}
+
+.theme-icon {
+  transition: transform 0.3s ease;
+}
+
+main {
+  /* centraliza texto dentro do main */
+  text-align: center;
+  /* largura máxima para melhor leitura */
+  max-width: 1200px;
+  /* ocupa 100% do container pai */
+  width: 100%;
+  /* adiciona margem superior para o header */
+  margin-top: 2rem;
+}
+
+section {
+  /* layout em coluna para elementos internos */
+  display: flex;
+  flex-direction: column;
+  /* centraliza itens horizontalmente */
+  align-items: center;
+}
+
+h1 {
+  /* título grande e destacado */
+  font-size: 3rem;
+  /* espaçamento abaixo do título */
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  /* transição suave para mudança de cor */
+  transition: color 0.3s ease;
+}
+
+ul.profiles {
+  /* remove marcadores de lista */
+  list-style: none;
+  /* remove padding e margin nativos */
+  padding: 0;
+  margin: 0;
+  /* exibe perfis em linha */
+  display: flex;
+  /* espaçamento entre os perfis */
+  gap: 2rem;
+  /* permite quebra de linha quando necessário */
+  flex-wrap: wrap;
+  /* centraliza perfis no pai */
+  justify-content: center;
+}
+
+li.profile {
+  /* cursor ajustado para clique */
+  cursor: pointer;
+  /* animação suave na transformação */
+  transition: transform 0.3s ease;
+}
+
+li.profile:hover {
+  /* aumenta o tamanho em hover */
+  transform: scale(1.1);
+}
+
+figure {
+  /* remove espaçamento padrão da figura */
+  margin: 0;
+  /* centraliza conteúdo da figura */
+  text-align: center;
+}
+
+img {
+  /* tamanho fixo da imagem */
+  width: 150px;
+  height: 150px;
+  /* shape quadrada (não circular) */
+  border-radius: 0;
+  /* corta a imagem se for maior */
+  object-fit: cover;
+  /* borda invisível padrão */
+  border: 1px solid transparent;
+  /* transição suave para mudança de borda */
+  transition: border-color 0.3s ease;
+}
+
+li.profile:hover img {
+  /* cor de borda em hover */
+  border-color: var(--hover-border);
+}
+
+figcaption {
+  /* espaço entre imagem e legenda */
+  margin-top: 1rem;
+  /* tamanho de texto do nome do perfil */
+  font-size: 1.2rem;
+  /* cor baseada no tema */
+  color: var(--text-color);
+  /* transição suave para mudança de cor */
+  transition: color 0.3s ease;
+}
+
+/* ====================================
+   RESPONSIVIDADE - DISPOSITIVOS MÓVEIS
+   ==================================== */
+
+/* Smartphone pequeno (até 480px) */
+@media (max-width: 480px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding: 1rem 0;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  ul.profiles {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  figcaption {
+    margin-top: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  li.profile:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Tablet pequeno (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding: 1.5rem 0;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.8rem;
+  }
+
+  ul.profiles {
+    gap: 1.5rem;
+  }
+
+  img {
+    width: 120px;
+    height: 120px;
+  }
+
+  figcaption {
+    margin-top: 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+/* Tablet grande (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding: 2rem 0;
+  }
+
+  main {
+    max-width: 95%;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  ul.profiles {
+    gap: 1.8rem;
+  }
+
+  img {
+    width: 130px;
+    height: 130px;
+  }
+
+  figcaption {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop grande (acima de 1025px) */
+@media (min-width: 1025px) {
+  body {
+    padding: 0 1rem;
+  }
+
+  main {
+    max-width: 1200px;
+  }
+
+  ul.profiles {
+    gap: 2rem;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+}
