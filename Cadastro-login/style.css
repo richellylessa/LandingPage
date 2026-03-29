@@ -1,0 +1,175 @@
+/* RESET (padroniza tudo) */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* CORPO DA PÁGINA */
+body {
+  align-items: center;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* HEADER FIXO NO TOPO */
+header {
+ background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  position: fixed;  /* fixa na tela */
+  top: 0;   /* gruda no topo */
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1000;      /* fica na frente de tudo */
+  width: 100%; /* ocupa toda largura */
+}
+
+header h1 {
+  color: black;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/* MAIN */
+main {
+  flex: 1;   /* empurra o footer pra baixo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* CONTAINER DO LOGIN */
+.login-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  padding: 30px;
+  width: 100%;
+}
+
+/* TÍTULO */
+.login-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* GRUPO DE INPUT */
+.input-group {
+  margin-bottom: 15px;
+}
+
+/* LABEL */
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* INPUT */
+.input-group input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  padding: 10px;
+  transition: 0.3s;
+  width: 100%;
+}
+
+/* EFEITO AO CLICAR */
+.input-group input:focus {
+  border-color: #4facfe;
+}
+
+/* BOTÃO */
+button {
+  background: #4facfe;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 12px;
+  transition: 0.3s;
+  width: 100%;
+}
+
+/* HOVER */
+button:hover {
+  background: #00c6ff;
+}
+
+/* FOOTER NO FINAL */
+footer {
+  background: rgba(255, 255, 255, 0.9);
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+}
+
+footer p {
+  color: black;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+/* RESPONSIVIDADE */
+
+/* Tablets e dispositivos menores */
+@media (max-width: 768px) {
+  .login-container {
+    max-width: 350px;
+    padding: 25px;
+  }
+
+  .login-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  .input-group input {
+    padding: 12px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 14px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .login-container {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .login-container h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+
+  .input-group {
+    margin-bottom: 12px;
+  }
+
+  .input-group input {
+    padding: 12px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 14px;
+  }
+}
