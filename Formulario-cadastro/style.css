@@ -1,0 +1,173 @@
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header - Cabeçalho */
+header {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0;
+}
+
+/* Main - Área principal */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+/* Form Container */
+.form-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Animação de entrada */
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.form-container h2 {
+  font-size: 1.8rem;
+  color: #667eea;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Label */
+label {
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+input:focus + label,
+.input-group label {
+  transition: color 0.3s ease;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  color: #333;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  transform: scale(1.01);
+}
+
+/* Botão */
+button {
+  padding: 14px 20px;
+  font-size: 1.05rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+button:hover {
+  
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.2);
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+footer p:hover {
+  color: #ffffff;
+}
