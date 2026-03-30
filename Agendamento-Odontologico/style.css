@@ -1,0 +1,142 @@
+/* ========== RESET CSS - Remove espaçamentos padrão ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ========== BODY - Cor de fundo geral ========== */
+body {
+  background: #f5f7fa;
+}
+
+/* ========== HEADER - Barra superior fixa ========== */
+header {
+  width: 100%;
+  padding: 20px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+/* Título do header com cor azul ========== */
+header h1 {
+  color: #2b6cb0;
+}
+
+/* Botão do header com gradiente ========== */
+header button {
+  padding: 10px 20px;
+  border: none;
+  background: linear-gradient(45deg, #2b6cb0, #38b2ac);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ========== MAIN - Conteúdo principal ========== */
+main {
+  margin-top: 60px;
+  padding: 40px;
+}
+
+/* ========== HERO - Seção principal com imagem e conteúdo ========== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Imagem da seção hero ========== */
+.hero img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 20px;
+}
+
+/* ========== CONTENT - Seção de texto ========== */
+.content {
+  max-width: 500px;
+}
+
+.content h2 {
+  font-size: 42px;
+  color: #2b6cb0;
+}
+
+.content h3 {
+  font-size: 36px;
+  color: #38b2ac;
+  margin-bottom: 20px;
+}
+
+.content p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* ========== FORM-BOX - Caixa do formulário de agendamento ========== */
+.form-box {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Campos de entrada do formulário ========== */
+.form-box input,
+.form-box select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: linear-gradient(45deg, #2b6cb0, #38b2ac);
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-box button:hover {
+  opacity: 0.9;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  color: #777;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content h2 {
+    font-size: 32px;
+  }
+
+  .content h3 {
+    font-size: 28px;
+  }
+}
